@@ -1,12 +1,9 @@
 <launch>
   <!-- Start the base drivers for the B21 -->
-  <node name="base-driver" pkg="rflex" type="b21">
-    <param  name="port" value="/dev/ttyR5" />
+  <node name="base_driver" pkg="rflex" type="b21" args="-port /dev/ttyR5">
   </node>
   
   <!-- Start the modified SICK toolbox_wrapper to run the LMS200 -->
-  <node name="sick_laser" pkg="sicktoolbox_wrapper" type="sicklms">
-    <param name="port" value="/dev/ttyR6" />
-    <param name="baud" value="38400" />
+  <node name="sick_laser" pkg="sicktoolbox_wrapper" type="sicklms" args="-port /dev/ttyR6">
   </node> 
 </launch>
