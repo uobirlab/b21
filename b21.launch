@@ -1,3 +1,9 @@
+<!--
+Launch configuration file for the B21.
+
+Use this files to start all of the nodes necessary to interact with the 
+B21 hardware.
+-->
 <launch>
   <!-- Start the base drivers for the B21 -->
   <node name="base_driver" pkg="rflex" type="b21" args="-port /dev/ttyR5">
