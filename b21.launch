@@ -1,0 +1,5 @@
+<launch>
+  <node name="base-driver" pkg="rflex" type="b21">
+    <param  name="port" value="/dev/ttyR5" />
+  </node>
+</launch>
