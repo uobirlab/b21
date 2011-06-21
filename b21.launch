@@ -6,10 +6,14 @@ B21 hardware.
 -->
 <launch>
   <!-- Start the base drivers for the B21 -->
-  <node name="base_driver" pkg="rflex" type="b21" args="-port /dev/ttyR5">
+  <node name="base_driver" pkg="rflex" type="b21" args="_port:=/dev/ttyR5">
   </node>
   
   <!-- Start the modified SICK toolbox_wrapper to run the LMS200 -->
-  <node name="sick_laser" pkg="sicktoolbox_wrapper" type="sicklms" args="-port /dev/ttyR6">
+  <node name="sick_laser" pkg="sicktoolbox_wrapper" type="sicklms" args="_port:=/dev/ttyR6">
+  </node> 
+
+  <!-- Start the tranformation publisher for the lasermodified -->
+  <node name="stp_laser" pkg="tf" type="static_transform_publisher" args="0 0 0.3 0 0 0 base laser 100">
   </node> 
 </launch>
