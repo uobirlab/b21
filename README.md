@@ -5,7 +5,9 @@ The B21r is the big red dustbin on wheels/expensive tripod. Partially outdated i
 
 We sometimes refer to the B21 as [Mr Chips](http://www.youtube.com/watch?v=qtM0-ZFwiNo).
 
-== PCs ==
+
+PCs
+---
 
 The B21 contains two PCs that were recently upgraded by support. More information on the upgrade is [here](http://www.cs.bham.ac.uk/~sjt/B21r/).
 
@@ -19,28 +21,45 @@ export http_proxy="http://webcache.cs.bham.ac.uk:3128"
 
 
 
-== ROS ==
+ROS 
+---
+
+ROS fuerte is installed on `irobot0` via binary packages into `/opt/ros/fuerte`. Additional packages which are available for all users are installed under `/opt/ros/local`. I have the following in my `.bashrc` to setup ROS correctly for this configuration.
+
+```bash
+# standard ROS install
+source /opt/ros/fuerte/setup.bash
+# machine-wide ROS packages
+source /opt/ros/local/setup.sh
+# user-local ROS packages
+export ROS_PACKAGE_PATH=~/ros-nah:${ROS_PACKAGE_PATH}
+# make sure the external-facing hostname is used for roscore
+export ROS_MASTER_URI=http://irobot0-wlan:11311
+```
+
+Charging 
+--------
 
 
-
-== Charging ==
-
-
-== Start-up ==
+Start-up
+--
 
 The B21 is started up in multiple stages. First off you need to turn on the fuses to the "Base" and "Enclosure". These are located behind the base door to the right of the door containing the charger. Once these are on you can power up the robot by pressing in the black rotary switch on the back right of the raised platform on top of the robot. After a few seconds the RFlex screen on the top of the enclosure should illuminate. Finally, to turn on the PCs,  press the black push switches on the back of the raised platform  next to the serial ports. You don't need to turn both PCs on if you only require one of them. 
 
-== Shut-down ==
+Shut-down
+--
 
 First off, power down the PCs. To do this press the push switch for the corresponding PC. This will cleanly halt the machine and power it off. Next, power off the robot using the RFlex screen. Use the rotary switch (which you pressed to turn the thing on) to select the "PWR" box (or "Host Console", they go to the same place), then select the "Kill PWR" box (ignoring the "Shutdown PCs" box). Finally, switch off the fuses on the robot base.
 
-== Devices ==
+Devices
+-------
 
 There are a number of devices connected to irobot0 over serial links. There is a 
 serial card with 8 ports [Rocket Port Universal 8-port RJ11 PCI card](ftp://ftp.comtrol.com/html/RPuPCI_docs.htm) (it becomes visible when you open the 2 front doors of the top of the  robot). To open doors, lift them gently before pulling towards you). The port towards the centre of the robot is /dev/ttyR7 and the port furthest away from the centre is /dev/ttyR0. Make sure the device descriptors in the configuration files match the actual wiring.
 
 
-== Speech ==
+Speech
+------
 
 When logged into the robot, type the following into the terminal:
 ```
@@ -53,11 +72,13 @@ echo my name is mr.chips > /dev/ttyR0
 ```
 
 
-== Laser Scanner ==
+Laser Scanner
+-------------
 
 On `/dev/ttyR2` is a Sick PLS laser scanner. Code to run this in ROS is installed on the robot. This should work for you if you run the `sick_pls_wrapper` node, and a long delay in connecting is usual, but it should usually start streaming data after 15 or 20 seconds. However, occasionally the driver will fail to connect to the scanner. In this case, disconnect the laser from the power (open the robot, and break the connector on the power wire leading to the laser) then reconnect it. The driver should now connect fine.
 
-== RFlex ==
+RFlex
+-----
 
 The B21 is controlled by sending commands to the RFlex controller on `/dev/ttyR5`. There is an odd problem that this doesn't work correctly on start-up, causing the B21 to move in a jerky and unpredictable fashion. To fix this, start up the rflex driver:
 
