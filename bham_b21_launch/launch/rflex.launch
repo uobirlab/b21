@@ -1,0 +1,16 @@
+<launch>
+
+  <!--
+      Please read the README.md in this stack if you haven't run this
+      driver before. If you don't do what it says there then the robot
+      won't work properly.
+  -->
+  
+  <!-- robot base driver and odom -->
+  <node pkg="rflex" type="b21" name="b21" output="screen">
+    <param name="port" value="/dev/ttyR5" />
+    <!-- odom is needed at 20Hz for localisation -->
+    <param name="rate" value="20" />
+  </node>
+
+</launch>

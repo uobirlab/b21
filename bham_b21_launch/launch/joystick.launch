@@ -1,0 +1,8 @@
+<launch>
+
+  <!-- joystick control, with conservative values -->
+  <param name="/b21/max_turn" value="0.7" />
+  <param name="/b21/max_speed" value="0.2" />
+  <include file="$(find b21_teleop)/launch/teleop.launch" />
+
+</launch>

@@ -1,0 +1,17 @@
+<package>
+  <description brief="bham_b21_lauch">
+
+     bham_b21_lauch
+
+  </description>
+  <author>Nick Hawes</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/bham_b21_lauch</url>
+  <depend package="b21_description"/>
+  <depend package="rflex"/>
+  <depend package="sicktoolbox_pls_wrapper"/>
+
+</package>
+
+

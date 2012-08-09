@@ -1,0 +1,10 @@
+<launch>
+
+  <!-- include all drivers -->
+
+  <include file="$(find bham_b21_launch)/launch/laser.launch" />
+  <include file="$(find bham_b21_launch)/launch/rflex.launch" />
+  <include file="$(find bham_b21_launch)/launch/tf.launch" />
+  <include file="$(find bham_b21_launch)/launch/joystick.launch" />
+
+</launch>

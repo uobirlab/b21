@@ -1,0 +1,11 @@
+<launch>
+  
+  <!-- laser --> 
+  <node pkg="sicktoolbox_pls_wrapper" type="sick_pls_wrapper" name="sick_pls" output="screen">
+    <param name="port" value="/dev/ttyR2" />
+    <param name="baud" value="38400" />
+    <param name="use_rep_117" value="true" />
+  </node>
+  
+
+</launch>
