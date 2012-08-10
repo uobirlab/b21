@@ -1,16 +1,16 @@
 <package>
-  <description brief="bham_b21_lauch">
-
-     bham_b21_lauch
-
+  <description brief="Launch configurations for the B21r robot at Birmingham">
+    Launch configurations for the B21r robot at Birmingham. This should contain only configuration files used to launch hardware drivers for the B21.
   </description>
   <author>Nick Hawes</author>
   <license>BSD</license>
   <review status="unreviewed" notes=""/>
-  <url>http://ros.org/wiki/bham_b21_lauch</url>
-  <depend package="b21_description"/>
+<!-- no, using local copy with links updated  <depend package="b21_description"> -->
   <depend package="rflex"/>
   <depend package="sicktoolbox_pls_wrapper"/>
+  <depend package="b21_teleop"/>
+  <depend package="robot_state_publisher"/>
+  <depend package="joint_state_publisher"/>
 
 </package>
 

@@ -77,6 +77,13 @@ Laser Scanner
 
 On `/dev/ttyR2` is a Sick PLS laser scanner. Code to run this in ROS is installed on the robot. This should work for you if you run the `sick_pls_wrapper` node, and a long delay in connecting is usual, but it should usually start streaming data after 15 or 20 seconds. However, occasionally the driver will fail to connect to the scanner. In this case, disconnect the laser from the power (open the robot, and break the connector on the power wire leading to the laser) then reconnect it. The driver should now connect fine.
 
+The laser isn't properly started until you see the following message printed out.
+
+```
+   Requesting measured value data stream...
+   	      Data stream started!
+```
+
 RFlex
 -----
 
@@ -93,3 +100,28 @@ jpnevulator --ascii --timing-print --tty /dev/ttyR5 --read
 ```
 
 Then kill both processes. After this the rflex driver will be fine the next time you run it. Thanks to [ROS Answers](http://answers.ros.org/question/10900/rflexb21-cmd_vel-not-working-as-expected/) for this.
+
+Launching
+---------
+
+To launch the basic B21 sensor drivers and tf components, run:
+
+```
+ roslaunch bham_b21_launch b21.launch 
+```
+
+and remember to wait for
+
+```
+	Requesting measured value data stream...
+		   Data stream started!
+```
+
+
+Once this is complete, you can bring up the navigation stack on the B21 with the command:
+
+```
+roslaunch bham_b21_2dnav research-lab.launch
+```
+
+This runs the path planning components plus AMCL with a map of the research lab. You may also find other maps in that package (as people like you make them).

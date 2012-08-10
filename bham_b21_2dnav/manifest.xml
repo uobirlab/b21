@@ -1,16 +1,11 @@
 <package>
   <description brief="bham_b21_2dnav">
-    Files to lauch the navigation stack on the B21r at Birmingham.
+    Files to launch the navigation stack on the B21r at Birmingham.
   </description>
   <author>Nick Hawes</author>
   <license>BSD</license>
   <review status="unreviewed" notes=""/>
   <depend package="move_base"/>
-  <depend package="b21_description"/>
-  <depend package="rflex"/>
-  <depend package="sicktoolbox_pls_wrapper"/>
-  <depend package="robot_state_publisher"/>
-  <depend package="joint_state_publisher"/>
+  <depend package="bham_b21_launch"/>
 </package>
-
 

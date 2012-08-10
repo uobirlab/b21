@@ -5,7 +5,16 @@
 \b bham_b21_lauch 
 
 <!-- 
-Provide an overview of your package.
+
+These are launch configurations for the iRobot B21r at the University of Birmingham. If you want to launch everything just run
+
+and wait until 
+
+     Requesting measured value data stream...
+      		 Data stream started!
+
+appears, as the laser may take 10 or 20 seconds to start up.
+
 -->
 
 -->
