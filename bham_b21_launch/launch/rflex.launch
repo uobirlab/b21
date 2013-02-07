@@ -11,6 +11,8 @@
     <param name="port" value="/dev/ttyR5" />
     <!-- odom is needed at 20Hz for localisation -->
     <param name="rate" value="20" />
+    <!-- sonar -->
+    <param name="sonar_enabled" value="false" />
   </node>
 
 </launch>
