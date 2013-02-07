@@ -14,7 +14,9 @@ The B21 contains two PCs that were recently upgraded by support. More informatio
 We are currently only using a single PC. It is labelled as `irobot0` on the robot and is accessible via the hostname `irobot0-wlan` on the `ccarobot` network (both wired and wireless). `irobot0` is running Ubuntu 12.04 LTS. If you want an account on the machine, please contact Nick.
 
 If, for any reason, the PC cannot connect to the network, run the following to temporarily reset ROS to the local host:
-`export ROS_HOSTNAME=localhost ; export ROS_MASTER_URI=http://localhost:11311`
+<pre>
+export ROS_HOSTNAME=localhost ; export ROS_MASTER_URI=http://localhost:11311
+</pre>
 
 When working on the command line on the B21 PCs, you might need to set a proxy variable to access the internet:
 
