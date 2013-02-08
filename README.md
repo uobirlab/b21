@@ -18,10 +18,11 @@ If, for any reason, the PC cannot connect to the network, run the following to t
 export ROS_HOSTNAME=localhost ; export ROS_MASTER_URI=http://localhost:11311
 </pre>
 
-When working on the command line on the B21 PCs, you might need to set a proxy variable to access the internet:
+When working on the command line on the B21 PCs, you might need to set the proxy variables to access the internet:
 
 <pre>
 export http_proxy="http://webcache.cs.bham.ac.uk:3128"
+export https_proxy="http://webcache.cs.bham.ac.uk:3128"
 </pre>
 
 
