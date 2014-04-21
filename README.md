@@ -57,6 +57,15 @@ Shut-down
 
 First off, power down the PCs. To do this press the push switch for the corresponding PC. This will cleanly halt the machine and power it off. Next, power off the robot using the RFlex screen. Use the rotary switch (which you pressed to turn the thing on) to select the "PWR" box (or "Host Console", they go to the same place), then select the "Kill PWR" box (ignoring the "Shutdown PCs" box). Finally, switch off the fuses on the robot base.
 
+
+Networking
+----------
+
+The B21 is equipped with a dual channel wireless router which can be used to make wired or wireless connections to the robot's computers. Each computer is also equipped with its own wireless card for making connections to the internet through the lab's `ccarobot` network. When connecting wirelessly to `B21net`, run `nat.sh` to establish routing between your device and `ccarobot`.
+
+As no DHCP server is currently running on the robot, an IP address must be manually assigned in the `192.168.1.0/24` range. Addresses 1, 2 and 3 are used by the access point and the two internal computers respectively. Therefore, your device's gateway address should be set to `192.168.10.2` if accessing the internet through irobot0.
+
+
 Devices
 -------
 
