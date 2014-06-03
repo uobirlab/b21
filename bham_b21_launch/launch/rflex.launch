@@ -7,7 +7,7 @@
   -->
   
   <!-- robot base driver and odom -->
-  <node pkg="rflex" type="b21" name="b21" output="screen">
+  <node pkg="rflex" type="b21_node" name="b21_node" output="screen">
     <param name="port" value="/dev/ttyR5" />
     <!-- odom is needed at 20Hz for localisation -->
     <param name="rate" value="20" />
