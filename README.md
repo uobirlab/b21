@@ -6,6 +6,31 @@ The B21r is the big red dustbin on wheels/expensive tripod. Partially outdated i
 We sometimes refer to the B21 as [Mr Chips](http://www.youtube.com/watch?v=qtM0-ZFwiNo).
 
 
+Hydro Setup
+-----------
+
+A lot of our previous code is now outdated with the move the hydro. The following wstool setup should give you a working robot.
+
+```
+- git: {local-name: b21, uri: 'https://github.com/uobirlab/b21', version: hydro-devel}
+- git: {local-name: sicktoolbox_wrapper, uri: 'https://github.com/hawesie/sicktoolbox_wrapper', version: hydro-devel}
+- git: {local-name: sicktoolbox, uri: 'https://github.com/hawesie/sicktoolbox-1', version: catkin}
+- git: {local-name: rwib21, uri: 'https://github.com/hawesie/rwib21', version: hydro-devel}
+```
+
+Then you can run the following for the basic robot bringup including teleop:
+
+```bash
+roslaunch bham_b21_launch b21.launch
+```
+
+The following will then localise the robot in a (bad) map of the lab:
+
+```
+roslaunch bham_b21_2dnav research-lab.launch
+```
+
+
 PCs
 ---
 
