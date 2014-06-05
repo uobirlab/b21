@@ -2,11 +2,15 @@
 
   <!-- tf transforms -->
   <param name="robot_description" textfile="$(find bham_b21_launch)/b21.urdf" />
-  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
-    <!-- include the pan/tilt unit joint states -->
-    <rosparam param="source_list">[ptu/state]</rosparam>
-  </node>
-  <node pkg="robot_state_publisher" name="robot_state_publisher" type="state_publisher" />
+  
+    <!-- Joint state publisher to accumulate joints -->
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+      <!-- include the pan/tilt unit joint states -->
+      <rosparam param="source_list">[/ptu/state, /chest_calibration_publisher/state]</rosparam>
+    </node>
+
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+
 
 
 </launch>

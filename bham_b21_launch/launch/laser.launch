@@ -5,6 +5,7 @@
     <param name="port" value="/dev/ttyR2" />
     <param name="baud" value="38400" />
     <param name="use_rep_117" value="true" />
+    <param name="frame_id" value="laserbase" />
   </node>
   
 

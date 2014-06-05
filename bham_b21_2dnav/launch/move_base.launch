@@ -1,0 +1,23 @@
+<launch>
+
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen"> 
+
+    <param name="controller_frequency" value="10.0" />
+    <param name="controller_patience" value="15.0" />
+    <param name="planner_frequency" value="2.0" />
+    <param name="clearing_rotation_allowed" value="false" />
+    
+
+    <rosparam file="$(find bham_b21_2dnav)/costmap_common_params_strands.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find bham_b21_2dnav)/costmap_common_params_strands.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find bham_b21_2dnav)/local_costmap_params_strands.yaml" command="load" />
+    <rosparam file="$(find bham_b21_2dnav)/global_costmap_params_strands.yaml" command="load" />
+
+    <rosparam file="$(find bham_b21_2dnav)/base_local_planner_params.yaml" command="load" />
+
+    <!-- remap topics for b21 -->
+    <remap from="/odom" to="/b21/odom"/>
+    <remap from="/cmd_vel" to="/b21/cmd_vel"/>
+  </node>
+
+</launch>

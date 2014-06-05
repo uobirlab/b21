@@ -1,10 +1,19 @@
 <launch>
 
-  <!-- include all drivers -->
+  <arg name="chest_camera" default="false" />
 
+  <!-- include all drivers -->
   <include file="$(find bham_b21_launch)/launch/laser.launch" />
   <include file="$(find bham_b21_launch)/launch/rflex.launch" />
   <include file="$(find bham_b21_launch)/launch/tf.launch" />
   <include file="$(find bham_b21_launch)/launch/joystick.launch" /> 
+
+  <!-- Chest Xtion Camera -->
+  <include if="$(arg chest_camera)" file="$(find openni_launch)/launch/openni.launch">
+    <arg name="camera" value="chest_xtion" />
+    <arg name="publish_tf" value="false" />
+    <arg name="device_id" value="1208270289" />
+  </include>
+ 
 
 </launch>
