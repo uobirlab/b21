@@ -8,12 +8,11 @@
     <param name="clearing_rotation_allowed" value="false" />
     
 
-    <rosparam file="$(find bham_b21_2dnav)/costmap_common_params_strands.yaml" command="load" ns="global_costmap" />
-    <rosparam file="$(find bham_b21_2dnav)/costmap_common_params_strands.yaml" command="load" ns="local_costmap" />
-    <rosparam file="$(find bham_b21_2dnav)/local_costmap_params_strands.yaml" command="load" />
-    <rosparam file="$(find bham_b21_2dnav)/global_costmap_params_strands.yaml" command="load" />
-
-    <rosparam file="$(find bham_b21_2dnav)/base_local_planner_params.yaml" command="load" />
+    <rosparam file="$(find bham_b21_2dnav)/b21_move_base_params/costmap_common_params_strands.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find bham_b21_2dnav)/b21_move_base_params/costmap_common_params_strands.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find bham_b21_2dnav)/b21_move_base_params/local_costmap_params_strands.yaml" command="load" />
+    <rosparam file="$(find bham_b21_2dnav)/b21_move_base_params/global_costmap_params_strands.yaml" command="load" />
+    <rosparam file="$(find bham_b21_2dnav)/b21_move_base_params/base_local_planner_params.yaml" command="load" />
 
     <!-- remap topics for b21 -->
     <remap from="/odom" to="/b21/odom"/>
